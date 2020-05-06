@@ -53,7 +53,9 @@ class Question extends React.Component {
         controls: 0,
         disablekb: 1,
         fs: 0,
-        modestbranding: 1
+        modestbranding: 1,
+        width: '390',
+        height: '640'
       },
     };
     return (
@@ -64,7 +66,7 @@ class Question extends React.Component {
             <div className={styles.questionImage}>
               {questionImageUrl && <img className={styles.imageSrc} src={questionImageUrl} />}
             </div>
-            <div className={styles.questionImage}>
+            <div className={styles.questionVideo}>
               {youtubeId && <YouTube videoId={youtubeId} opts={opts} onReady={this._onReady} />}
             </div>
             <h1
