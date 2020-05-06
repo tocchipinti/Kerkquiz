@@ -4,10 +4,6 @@
     <div class="question">
       <template v-if="!isAnswerSubmitted">
         <question-image v-if="currentQuestion.image" :asset="currentQuestion.image" />
-        <div v-if="currentQuestion.youtube" class="question-video">
-            <youtube class="video-src" :video-id="currentQuestion.youtube" :player-vars="playerVars"
-            :fitParent="true" :resize="true"></youtube>
-        </div>
         <h1
           class="title"
           :class="{
@@ -47,14 +43,7 @@ export default {
   },
   data() {
     return {
-      playerClickedCard: false,
-      playerVars: {
-        autoplay: 1,
-        controls: 0,
-        disablekb: 1,
-        fs: 0,
-        modestbranding: 1
-      }
+      playerClickedCard: false
     }
   },
   computed: {
@@ -81,17 +70,6 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-.question-video
-  display: flex
-  justify-content: center
-  max-height: 450px
-  overflow: hidden
-
-.video-src
-  object-fit: contain
-  padding: 0 1rem
-  width: 100%
-
 .question-card
   flex-grow: 1
   height: 100%
