@@ -6,6 +6,7 @@ import Icons from '../Icons'
 import AnswerCount from './AnswerCount'
 import Countdown from './Countdown'
 import {findCurrentQuestion} from '../../utils'
+import YouTube from 'react-youtube';
 
 const builder = imageUrlBuilder(client)
 function urlFor(source) {
@@ -45,7 +46,16 @@ class Question extends React.Component {
     const questionImageUrl = urlFor(currentQuestion.image)
       .width(300)
       .url()
-
+    const youtubeId = currentQuestion.youtube;
+    const opts = {
+      playerVars: {
+        autoplay: 1,
+        controls: 0,
+        disablekb: 1,
+        fs: 0,
+        modestbranding: 1
+      },
+    };
     return (
       <div className={styles.root}>
         <Countdown match={match} onCountdownDone={this.handleCloseQuestion} />
@@ -53,6 +63,9 @@ class Question extends React.Component {
           <div className={styles.title}>
             <div className={styles.questionImage}>
               {questionImageUrl && <img className={styles.imageSrc} src={questionImageUrl} />}
+            </div>
+            <div className={styles.questionImage}>
+              {youtubeId && <YouTube videoId={youtubeId} opts={opts} onReady={this._onReady} />}
             </div>
             <h1
               className={`
@@ -70,6 +83,11 @@ class Question extends React.Component {
         </div>
       </div>
     )
+  }
+
+  _onReady(event) {
+    event.target.setVolume(100);
+    event.target.playVideo();  
   }
 }
 
