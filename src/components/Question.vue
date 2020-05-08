@@ -4,6 +4,7 @@
     <div class="question">
       <template v-if="!isAnswerSubmitted">
         <question-image v-if="currentQuestion.image" :asset="currentQuestion.image" />
+        <h1 class="title" > {{currentQuestion.group}}</h1>
         <h1
           class="title"
           :class="{
@@ -16,7 +17,6 @@
       </template>
       <template v-else>
         <div class="question-status">
-          <squizzy-squid class="confirmation-squizzy" eyes="happy" />
           <h1 class="title">Antwoord ingevuld!</h1>
           <p>Wachten op de andere spelers...</p>
         </div>
@@ -33,13 +33,11 @@
 <script>
 import QuestionImage from './question/QuestionImage'
 import QuestionChoices from './question/QuestionChoices'
-import SquizzySquid from './general/SquizzySquid'
 import {mapGetters} from 'vuex'
 export default {
   components: {
     QuestionImage,
-    QuestionChoices,
-    SquizzySquid
+    QuestionChoices
   },
   data() {
     return {

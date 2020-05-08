@@ -42,11 +42,14 @@ class Question extends React.Component {
     const {match} = this.props
     const currentQuestion = findCurrentQuestion(match)
     const title = currentQuestion.title
+    const group = currentQuestion.group
     const titleLength = title.split('').length
     const questionImageUrl = urlFor(currentQuestion.image)
       .width(300)
       .url()
     const youtubeId = currentQuestion.youtube;
+    const startTime = currentQuestion.youtubeStartTime ? currentQuestion.youtubeStartTime : undefined;
+    const endTime = currentQuestion.youtubeEndTime ? currentQuestion.youtubeEndTime : undefined;
     const opts = {
       playerVars: {
         autoplay: 1,
@@ -54,8 +57,10 @@ class Question extends React.Component {
         disablekb: 1,
         fs: 0,
         modestbranding: 1,
-        width: '390',
-        height: '640'
+        width: '1908',
+        height: '690',
+        endSeconds: endTime,
+        startSeconds: startTime
       },
     };
     return (
@@ -78,6 +83,7 @@ class Question extends React.Component {
             >
               {title}
             </h1>
+            <h1 className={styles.questionTitle}>{group}</h1>
           </div>
           <div className={styles.choices} data-grid={currentQuestion.choices.length}>
             {this.renderChoices()}

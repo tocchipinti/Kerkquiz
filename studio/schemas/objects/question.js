@@ -29,6 +29,11 @@ export default {
         })
     },
     {
+      name: 'group',
+      title: 'Group',
+      type: 'string'
+    },
+    {
       name: 'timeLimit',
       title: 'Time Limit',
       type: 'number',
@@ -60,6 +65,18 @@ export default {
       title: 'YouTube video id',
       type: 'string',
       description: 'Here you can add an Youtube video.'
+    },
+    {
+      name: 'youtubeStartTime',
+      title: 'Starttime of the video',
+      type: 'number',
+      description: 'Here you can add the start time Youtube video.'
+    },
+    {
+      name: 'youtubeEndTime',
+      title: 'Endtime of the video',
+      type: 'number',
+      description: 'Here you can add the end time Youtube video.'
     },
     {
       name: 'choices',
