@@ -79,6 +79,12 @@ export default {
       description: 'Here you can add the end time Youtube video.'
     },
     {
+      name: 'youtubeDuration',
+      title: 'Duration of the video',
+      type: 'number',
+      description: 'Here you can the duration time of the Youtube video.'
+    },
+    {
       name: 'choices',
       title: 'Answer choices',
       type: 'array',

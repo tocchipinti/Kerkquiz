@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {get} from 'lodash'
 import MatchQrCode from './MatchQrCode'
-import Squizzy from '../Squizzy'
 import PlayerList from './PlayerList'
 import {assembleMatchUrl} from '../../utils'
 
@@ -51,7 +50,6 @@ class BeforeStart extends React.Component {
         </div>
 
         <section className={`${styles.section} ${styles.matchInfo}`}>
-          <Squizzy mouth="happy" className={styles.squizzy} />
           <div>
             <h1 className={styles.quizName}>{quiz.title}</h1>
             <p className={styles.description}>{quiz.description}</p>
