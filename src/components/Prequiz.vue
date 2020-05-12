@@ -1,6 +1,5 @@
 <template>
   <div class="view prequiz">
-    <squizzy-squid :mouth="activeView.expression.mouth" :eyes="activeView.expression.eyes" />
     <div v-if="activeView.status" class="status label">
       {{ activeView.status }}
     </div>
@@ -32,12 +31,10 @@
 </template>
 
 <script>
-import SquizzySquid from '../components/general/SquizzySquid'
 import RegisterPlayer from '../components/general/RegisterPlayer'
 const Leaderboard = () => import('../components/result/Leaderboard')
 export default {
   components: {
-    SquizzySquid,
     RegisterPlayer,
     Leaderboard
   },
@@ -74,7 +71,6 @@ export default {
           title: 'Bedankt voor het spelen',
           subtitle: 'Het spel is afgelopen, vondt je het leuk?',
           status: this.match.quiz.title,
-          expression: {mouth: 'happy'}
         }
 
       // Register for match if no Player
@@ -83,7 +79,6 @@ export default {
           name: 'register',
           title: `Het is Quiztijd!`,
           status: `Joining: ${title}`,
-          expression: {eyes: 'happy', mouth: 'default'}
         }
 
       return {
@@ -91,7 +86,6 @@ export default {
         title: `Hallo ${player.name}!`,
         subtitle: 'Het spel gaat bijna beginnen. Wachten op de Quizmaster...',
         status: `Joined: ${title}`,
-        expression: {eyes: 'default', mouth: 'happy'}
       }
     },
 

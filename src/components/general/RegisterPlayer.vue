@@ -23,10 +23,10 @@ export default {
   },
   data() {
     return {
-      label: 'What do we call you?',
+      label: 'Hoe heet je?',
       placeholder: 'Nickname',
       playerName: null,
-      buttonTitle: 'Join quiz',
+      buttonTitle: 'Speel mee!',
       error: false
     }
   },

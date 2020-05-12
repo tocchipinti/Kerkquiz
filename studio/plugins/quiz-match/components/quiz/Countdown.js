@@ -18,7 +18,7 @@ class Countdown extends React.Component {
     const {match} = this.props
     const currentQuestion = findCurrentQuestion(match)
     this.setState({seconds: currentQuestion.timeLimit || defaultTimeLimit})
-    if (this.currentQuestion.youtube && this.currentQuestion.youtubeDuration) {
+    if (currentQuestion.youtube && currentQuestion.youtubeDuration) {
       setTimeout(() => {
         this.myInterval = setInterval(() => {
           const {seconds} = this.state
@@ -52,7 +52,7 @@ class Countdown extends React.Component {
             clearInterval(this.myInterval)
           }
         }, 1000)    
-      }, this.currentQuestion.youtubeDuration)
+      }, currentQuestion.youtubeDuration)
     } else {
       this.myInterval = setInterval(() => {
         const {seconds} = this.state
