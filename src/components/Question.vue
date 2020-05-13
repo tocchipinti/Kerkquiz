@@ -98,7 +98,11 @@ export default {
   padding-top: 1rem
 
 .title-long
-  font-size: $font-size-medium
+  font-size: 1.75rem
+  font-weight: bold
+  text-align: center
+  margin: auto
+  padding-top: 1rem
 
 .title-with-image
   font-size: 2rem

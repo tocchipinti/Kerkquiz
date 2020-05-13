@@ -18,42 +18,24 @@ class Countdown extends React.Component {
   componentDidMount() {
     const {match} = this.props
     const currentQuestion = findCurrentQuestion(match)
-    this.setState({seconds: currentQuestion.timeLimit || defaultTimeLimit, youtubeDuration: currentQuestion.youtubeDuration || 0})
+    this.setState({seconds: currentQuestion.timeLimit || defaultTimeLimit})
+    this.setState({youtubeDuration: currentQuestion.youtubeDuration || 0})
+
     this.myInterval = setInterval(() => {
-      const {seconds} = this.state.seconds;
-      const {youtubeDuration} = this.state.youtubeDuration;
-      const timeLimit = currentQuestion.timeLimit
-      const halfTime = timeLimit / 2
-
-      if (seconds <= halfTime + 1) {
-        this.setState({
-          mouth: 'default'
-        })
-      }
-
-      if (seconds <= 11) {
-        this.setState({
-          mouth: 'line'
-        })
-      }
-
-      if (seconds <= 6) {
-        this.setState({
-          mouth: 'sad'
-        })
-      }
+      const {seconds} = this.state
+      const {youtubeDuration} = this.state
 
       if (seconds > 0 && youtubeDuration === 0) {
         this.setState(({seconds}) => ({
           seconds: seconds - 1
         }))
       }
-      if (youtubeDuration > 0 && seconds > 0) {
+      if (youtubeDuration > 0 && seconds !== 0) {
         this.setState(({youtubeDuration}) => ({
           youtubeDuration: youtubeDuration - 1
         }))
       }
-      if (seconds === 0) {
+      if (seconds === 0 && youtubeDuration === 0) {
         this.handleCountdownDone()
         clearInterval(this.myInterval)
       }

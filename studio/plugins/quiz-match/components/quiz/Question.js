@@ -56,8 +56,8 @@ class Question extends React.Component {
         modestbranding: 1,
         width: '1908',
         height: '690',
-        endSeconds: currentQuestion.youtubeEndTime,
-        startSeconds: currentQuestion.youtubeStartTime
+        end: currentQuestion.youtubeEndTime,
+        start: currentQuestion.youtubeStartTime
       },
     };
     return (
@@ -71,6 +71,7 @@ class Question extends React.Component {
             <div className={styles.questionVideo}>
               {youtubeId && <YouTube videoId={youtubeId} opts={opts} onReady={this._onReady} />}
             </div>
+            <h1 className={styles.questionTitle}>{group}</h1>
             <h1
               className={`
                 ${styles.questionTitle}
@@ -80,7 +81,6 @@ class Question extends React.Component {
             >
               {title}
             </h1>
-            <h1 className={styles.questionTitle}>{group}</h1>
           </div>
           <div className={styles.choices} data-grid={currentQuestion.choices.length}>
             {this.renderChoices()}
