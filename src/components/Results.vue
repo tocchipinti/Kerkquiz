@@ -2,7 +2,6 @@
   <div v-touch:swipe.left="swipeRight" v-touch:swipe.right="swipeLeft" class="result page">
     <div class="progress label">{{ status }}</div>
     <div>
-      <squizzy-squid :mouth="expression.mouth" :eyes="expression.eyes" />
       <p class="feedback-heading">{{ feedbackTitle }}</p>
       <h1 class="question" :class="{long: question.title.split('').length > 60}">
         {{ question.title }}
@@ -43,7 +42,6 @@
 </template>
 
 <script>
-import SquizzySquid from '@/components/general/SquizzySquid'
 const FEEDBACK_WRONG = [
   `Volgende keer beter`,
   'So inkompetant',
@@ -82,9 +80,6 @@ const RESULT_VIEWS = {
 }
 import {mapGetters} from 'vuex'
 export default {
-  components: {
-    SquizzySquid
-  },
   data() {
     return {
       activeView: RESULT_VIEWS.graph,

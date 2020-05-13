@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles/TopPlayers.css'
 import leaderboard from './styles/Leaderboard.css'
-import Squizzy from './Squizzy'
 
 const Crown = () => (
   <svg strokeWidth="0" viewBox="0 0 640 512" xmlns="http://www.w3.org/2000/svg">
@@ -15,7 +14,6 @@ const TopPlayers = props => {
   return (
     <div className={styles.root}>
       <div className={styles.header}>
-        <Squizzy mouth="happy" className={styles.squizzy} />
         <div>
           <h1>Spel afgelopen</h1>
           <p>Bedankt voor het spelen!</p>

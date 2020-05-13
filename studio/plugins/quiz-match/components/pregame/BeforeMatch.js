@@ -54,8 +54,8 @@ class BeforeStart extends React.Component {
             <h1 className={styles.quizName}>{quiz.title}</h1>
             <p className={styles.description}>{quiz.description}</p>
             <div className={styles.squizzy}>
-              <img src="../../../../../src/assets/kompas.jpeg"/>
-              <img src="../../../../../src/assets/lichtzijde.jpeg"/>
+              <img src="kompas.jpeg"/>
+              <img src="lichtzijde.jpeg"/>
             </div>
             <div className={styles.matchDetails}>
               <div>

@@ -5,7 +5,6 @@ import Spinner from 'part:@sanity/components/loading/spinner'
 import Preview from 'part:@sanity/base/preview'
 import client from 'part:@sanity/base/client'
 import schema from 'part:@sanity/base/schema'
-import Squizzy from './components/Squizzy'
 import Match from './components/Match'
 
 import styles from './QuizMatchTool.css'
@@ -163,9 +162,8 @@ class QuizMatchTool extends React.Component {
           <>
             {this.renderMatchList()}
             <div className={styles.welcome}>
-              <Squizzy />
-              <h1 className={styles.welcomeMessage}>Welcome to Squizzy!</h1>
-              <p className={styles.welcomeMessage}>Please select a match to start playing.</p>
+              <h1 className={styles.welcomeMessage}>Welkom de Kerkquiz!</h1>
+              <p className={styles.welcomeMessage}>Selecteer een wedstrijd om te starten.</p>
             </div>
           </>
         )}

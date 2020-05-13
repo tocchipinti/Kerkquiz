@@ -4,7 +4,6 @@ import Leaderboard from './Leaderboard'
 import AnswerGraph from './AnswerGraph'
 import styles from '../styles/Results.css'
 import Icons from '../Icons'
-import Squizzy from '../Squizzy'
 
 class Results extends React.Component {
   render() {
@@ -26,7 +25,6 @@ class Results extends React.Component {
       <div className={styles.root}>
         <div className={styles.graph}>
           <div>
-            <Squizzy mouth="happy" className={styles.resultSquizzy} />
             <p className={styles.label}>Vraag</p>
             <h2 className={`${styles.heading} ${titleLength >= 50 ? styles.long : ''}`}>
               {currentQuestion.title}
