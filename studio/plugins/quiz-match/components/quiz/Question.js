@@ -30,7 +30,6 @@ class Question extends React.Component {
             <div className={styles.symbol}>
               <Symbol />
             </div>
-
             <div className={styles.choiceTitle}>{choice.title}</div>
           </div>
         </div>
@@ -48,8 +47,6 @@ class Question extends React.Component {
       .width(300)
       .url()
     const youtubeId = currentQuestion.youtube;
-    const startTime = currentQuestion.youtubeStartTime ? currentQuestion.youtubeStartTime : undefined;
-    const endTime = currentQuestion.youtubeEndTime ? currentQuestion.youtubeEndTime : undefined;
     const opts = {
       playerVars: {
         autoplay: 1,
@@ -59,8 +56,8 @@ class Question extends React.Component {
         modestbranding: 1,
         width: '1908',
         height: '690',
-        endSeconds: endTime,
-        startSeconds: startTime
+        endSeconds: currentQuestion.youtubeEndTime,
+        startSeconds: currentQuestion.youtubeStartTime
       },
     };
     return (
