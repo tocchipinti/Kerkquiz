@@ -83,8 +83,8 @@ export default {
 
 .choice-title
   flex-grow: 1
-  font-size: $font-size-large
-  font-weight: normal
+  font-size: $font-size-small
+  font-weight: lighter
   text-align: center
   @media screen and (max-width: 320px)
     font-size: $font-size-medium

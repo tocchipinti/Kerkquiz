@@ -75,6 +75,10 @@
   }
 }
 
+.youtubeHeader {
+  margin-top: -56px;
+}
+
 .titleWithImage {
   font-size: 2.5em;
   @media screen and (max-width: 650px) {

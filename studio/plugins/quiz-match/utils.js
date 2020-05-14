@@ -21,6 +21,10 @@ export const assembleMatchUrl = ({slug}) => {
   return `${config.default.remoteWebHost}/match/${slug.current}`
 }
 
+export const getSlug = ({slug}) => {
+  return `${slug.current}`
+}
+
 export function findCurrentQuestion(match) {
   return match.quiz.questions.find(question => question._key === match.currentQuestionKey)
 }

@@ -56,7 +56,7 @@ export default {
         .dispatch('playerStore/registerNewPlayer', this.playerName)
         .then(response => {
           if (!response) {
-            this.error = 'Something went wrong, please try again.'
+            this.error = 'Er ging iets mis, probeer het opnieuw.'
             this.$emit('error', this.error)
           } else {
             this.error = false

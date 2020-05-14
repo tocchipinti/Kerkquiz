@@ -8,7 +8,7 @@
         <h1
           class="title"
           :class="{
-            'title-long': currentQuestion.title.split('').length > 80,
+            'title-long': currentQuestion.title.split('').length > 60,
             'title-with-image': currentQuestion.image
           }"
         >
@@ -98,8 +98,8 @@ export default {
   padding-top: 1rem
 
 .title-long
-  font-size: 1.75rem
-  font-weight: bold
+  font-size: 1.5rem
+  font-weight: lighter
   text-align: center
   margin: auto
   padding-top: 1rem

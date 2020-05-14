@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import {get} from 'lodash'
 import MatchQrCode from './MatchQrCode'
 import PlayerList from './PlayerList'
-import {assembleMatchUrl} from '../../utils'
+import {assembleMatchUrl, getSlug} from '../../utils'
 
 import styles from '../styles/BeforeMatch.css'
 
@@ -33,12 +33,13 @@ class BeforeStart extends React.Component {
     const {players = [], quiz} = match
     const hasQuestions = quiz.questions && get(quiz, 'vragen', []).length > 0
     const matchClientUrl = assembleMatchUrl(match)
+    const slug = getSlug(match)
 
     return (
       <div className={styles.container}>
         <div className={styles.qrCodeMobile}>
           <p>
-            <strong>{matchClientUrl}</strong>
+            <strong>{slug}</strong>
           </p>
           <MatchQrCode match={match} />
           <p className={styles.instructions}>
@@ -54,8 +55,8 @@ class BeforeStart extends React.Component {
             <h1 className={styles.quizName}>{quiz.title}</h1>
             <p className={styles.description}>{quiz.description}</p>
             <div className={styles.squizzy}>
-              <img src="kompas.jpeg"/>
-              <img src="lichtzijde.jpeg"/>
+              <img src={require('kompas.jpeg')} />
+              <img src={require('lichtzijde.jpeg')} />
             </div>
             <div className={styles.matchDetails}>
               <div>
@@ -77,10 +78,11 @@ class BeforeStart extends React.Component {
           </div>
           <div className={styles.qrCodeDesktop}>
             <p>
-              <strong>{matchClientUrl}</strong>
+              <strong>Ga naar kerkquiz.now.sh en vul de spelcode in</strong>
+              <strong>Spelcode: {slug}</strong>
             </p>
             <MatchQrCode match={match} />
-            <p className={styles.instructions}>Scan de QR code om mee te spelen!</p>
+            <p className={styles.instructions}>of scan de QR code om mee te spelen!</p>
           </div>
         </section>
       </div>

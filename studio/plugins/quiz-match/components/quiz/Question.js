@@ -54,8 +54,9 @@ class Question extends React.Component {
         disablekb: 1,
         fs: 0,
         modestbranding: 1,
-        width: '1908',
-        height: '690',
+        width: 1908,
+        height: 690,
+        rel: 0,
         end: currentQuestion.youtubeEndTime,
         start: currentQuestion.youtubeStartTime
       },
@@ -69,14 +70,14 @@ class Question extends React.Component {
               {questionImageUrl && <img className={styles.imageSrc} src={questionImageUrl} />}
             </div>
             <div className={styles.questionVideo}>
-              {youtubeId && <YouTube videoId={youtubeId} opts={opts} onReady={this._onReady} />}
+              {youtubeId && <YouTube className={styles.youtubeHeader} videoId={youtubeId} opts={opts} onReady={this._onReady} />}
             </div>
             <h1 className={styles.questionTitle}>{group}</h1>
             <h1
               className={`
                 ${styles.questionTitle}
                 ${questionImageUrl ? styles.titleWithImage : ''}
-                ${titleLength >= 70 ? styles.titleLong : ''}
+                ${titleLength >= 60 ? styles.titleLong : ''}
                 ${titleLength <= 20 ? styles.titleShort : ''}`}
             >
               {title}
