@@ -4,6 +4,8 @@ import {get} from 'lodash'
 import MatchQrCode from './MatchQrCode'
 import PlayerList from './PlayerList'
 import {assembleMatchUrl, getSlug} from '../../utils'
+import kompas from '../pregame/kompas.jpeg'
+import lichtzijde from '../pregame/lichtzijde.jpeg'
 
 import styles from '../styles/BeforeMatch.css'
 
@@ -55,8 +57,8 @@ class BeforeStart extends React.Component {
             <h1 className={styles.quizName}>{quiz.title}</h1>
             <p className={styles.description}>{quiz.description}</p>
             <div className={styles.squizzy}>
-              <img src={require('kompas.jpeg')} />
-              <img src={require('lichtzijde.jpeg')} />
+              <img src={kompas} />
+              <img src={lichtzijde} />
             </div>
             <div className={styles.matchDetails}>
               <div>
@@ -79,6 +81,7 @@ class BeforeStart extends React.Component {
           <div className={styles.qrCodeDesktop}>
             <p>
               <strong>Ga naar kerkquiz.now.sh en vul de spelcode in</strong>
+              <br />
               <strong>Spelcode: {slug}</strong>
             </p>
             <MatchQrCode match={match} />
