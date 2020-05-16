@@ -39,6 +39,13 @@
   padding-top: var(--large-padding);
 }
 
+.hiddenVideo {
+  display: none;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: var(--large-padding);
+}
+
 .questionImage {
   display: flex;
   justify-content: center;
@@ -76,7 +83,7 @@
 }
 
 .youtubeHeader {
-  margin-top: -81px;
+  margin-top: -85px;
 }
 
 .titleWithImage {
